@@ -4,8 +4,8 @@ const net = require('net');
  */
 const connect = function() {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
+    host: '135.23.222.131',
+    port: 50542
   });
   // interpret incoming data as text
   conn.setEncoding('utf8');
@@ -15,12 +15,13 @@ const connect = function() {
   conn.on('connect', () => {
     console.log('Successfully connected to server');
     conn.write('Name: MSG');
+    conn.write('Say: is done i think')
   });
   return conn;
 }
 
 module.exports = { connect };
 
-// ip:135.23.222.131'
+// ip:135.23.222.131
 
 // port:50542
